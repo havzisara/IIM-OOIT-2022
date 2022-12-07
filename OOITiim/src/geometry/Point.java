@@ -26,6 +26,22 @@ public class Point {
 		double d = Math.sqrt(dX*dX + dY*dY);
 		return d;
 	}
+	
+	@Override
+	public String toString() {
+		return "(" + x + ", " + y + ")";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Point) {
+			Point temp = (Point) obj;
+			if (x == temp.x && y == temp.y) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public int getX() {
 		return x;

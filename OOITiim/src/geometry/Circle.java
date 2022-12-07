@@ -28,6 +28,22 @@ public class Circle {
 		return r * r * Math.PI;
 	}
 	
+	@Override
+	public String toString() {
+		return "Center: " + center + ", radius: " + r;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Circle) {
+			Circle temp = (Circle) obj;
+			if (center.equals(temp.center) && r == temp.r) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public Point getCenter() {
 		return center;
 	}

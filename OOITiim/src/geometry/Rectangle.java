@@ -30,6 +30,22 @@ public class Rectangle {
 		return width * height;
 	}
 	
+	@Override
+	public String toString() {
+		return "Upper left point: " + upperLeft + ", width: " + width + ", height: " + height;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Rectangle) {
+			Rectangle temp = (Rectangle) obj;
+			if (upperLeft.equals(temp.upperLeft) && width == temp.width && height == temp.height) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public Point getUpperLeft() {
 		return upperLeft;
 	}
